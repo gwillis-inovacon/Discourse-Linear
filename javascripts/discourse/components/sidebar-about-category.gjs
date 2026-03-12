@@ -9,6 +9,7 @@ import categoryLink from "discourse/helpers/category-link";
 import htmlSafe from "discourse/helpers/html-safe";
 import { bind } from "discourse/lib/decorators";
 import { NotificationLevels } from "discourse/lib/notification-levels";
+import { getCategoryAndTagUrl } from "discourse/lib/url";
 import Composer from "discourse/models/composer";
 import { i18n } from "discourse-i18n";
 import CategoryNotificationsButton from "select-kit/components/category-notifications-button";
@@ -20,11 +21,17 @@ export default class SidebarAboutCategory extends Component {
   @service currentUser;
   @service composer;
 
-  @tracked topTags = this.site.category_top_tags;
   @tracked categoryNotificationLevel;
 
   get category() {
     return this.router.currentRoute?.attributes?.category;
+  }
+
+  get topTags() {
+    return this.site.categoryTopTags.map((tag) => ({
+      name: tag.name,
+      href: getCategoryAndTagUrl(this.category, true, tag),
+    }));
   }
 
   get showTopicsForSubCategory() {
@@ -111,7 +118,7 @@ export default class SidebarAboutCategory extends Component {
           {{/if}}
 
         </div>
-        {{#if (or this.category.subcategories this.site.category_top_tags)}}
+        {{#if (or this.category.subcategories this.topTags.length)}}
 
           <div
             class="custom-right-sidebar_category-about -tags-and-subcategories"
@@ -126,17 +133,17 @@ export default class SidebarAboutCategory extends Component {
               </div>
             {{/if}}
 
-            {{#if this.site.category_top_tags}}
+            {{#if this.topTags.length}}
               <div class="custom-right-sidebar_tags">
                 <h4>{{i18n (themePrefix "top_tags")}}</h4>
                 <div class="discourse-tags">
-                  {{#each this.site.category_top_tags as |tag|}}
+                  {{#each this.topTags as |tag|}}
                     <a
-                      href="/tags/c/{{this.category.slug}}/{{tag}}"
-                      data-tag-name={{tag}}
+                      href={{tag.href}}
+                      data-tag-name={{tag.name}}
                       class="discourse-tag simple"
                     >
-                      {{tag}}
+                      {{tag.name}}
                     </a>
                   {{/each}}
                 </div>
