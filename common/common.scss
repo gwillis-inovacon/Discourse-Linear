@@ -7,35 +7,33 @@
   --topic-body-width: 900px;
 }
 
-/* Linear shadow mixins */
+// ── Mixins ──
+
 @mixin shadow-linear {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  box-shadow: var(--linear-shadow-ring);
 }
 
 @mixin shadow-linear-hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: var(--linear-shadow-ring), var(--linear-shadow-panel);
 }
 
 @mixin shadow-linear-sm {
-  box-shadow: rgba(0, 0, 0, 0.03) 0px 1.2px 0px 0px;
+  box-shadow: var(--linear-shadow-subtle);
 }
 
-@mixin custom-card {
+@mixin linear-card {
   box-sizing: border-box;
-  padding: 0.75em;
+  padding: 16px;
   border-radius: 8px;
-  border: 1px solid var(--linear-border-color);
+  border: 1px solid var(--linear-border-standard);
   background: rgba(255, 255, 255, 0.02);
-  @include shadow-linear;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease;
 
   @content;
 
   .discourse-no-touch & {
     &:hover {
-      border: 1px solid var(--linear-accent-bright);
-      @include shadow-linear-hover;
-      transform: translateY(-2px);
+      border-color: var(--linear-border-emphasis);
     }
   }
 }
@@ -47,6 +45,8 @@
     width: 100%;
   }
 }
+
+// ── Imports ──
 
 @import "badges";
 @import "categories";
@@ -64,20 +64,23 @@
 @import "topic-list";
 @import "user";
 
+// ── Body ──
+
 body {
-  background: var(--redditish-bg-color);
+  background: var(--linear-bg);
   background-image: none !important;
-  font-family: 'Inter', 'Inter Variable', -apple-system, system-ui, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', 'Inter Variable', -apple-system, system-ui,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
   font-feature-settings: "cv01", "ss03";
   line-height: 1.6;
 
   &:not(.has-sidebar-page) {
     .sidebar-wrapper {
-      background: var(--redditish-bg-color);
+      background: var(--linear-bg);
     }
   }
 
-  /* pepesilva.jpg */
   &.tags-page,
   &[class*="navigation-"]:not([class*="archetype-"]),
   &[class*="category-"]:not([class*="archetype-"]) {
@@ -143,6 +146,8 @@ body {
   }
 }
 
+// ── Buttons ──
+
 .btn-default,
 .btn-primary,
 .btn {
@@ -154,18 +159,37 @@ body {
       .sidebar-section-link-wrapper &,
       .sidebar-section-link
     ) {
-    padding: 0.5em 1em;
-    border: 1px solid var(--linear-border-color);
+    padding: 7px 16px;
+    border: 1px solid var(--linear-border-standard);
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.02);
-    @include shadow-linear-sm;
-    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--linear-text-secondary);
     font-weight: 510;
+    transition: all 0.2s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
       border-color: var(--linear-accent-bright);
     }
+  }
+}
+
+.btn-primary:not(
+    .btn-icon,
+    [class*="popup-menu-btn"],
+    [class*="post-action-menu__"],
+    [class*="topic-map__"],
+    .sidebar-section-link-wrapper &,
+    .sidebar-section-link
+  ) {
+  background: var(--linear-accent);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 1px 3px rgba(94, 106, 210, 0.3);
+
+  &:hover {
+    background: var(--linear-accent-hover);
+    border-color: transparent;
   }
 }
 
@@ -179,6 +203,8 @@ body {
   }
 }
 
+// ── Layout ──
+
 #main-outlet {
   max-width: 640px;
   margin: 0 auto;
@@ -187,14 +213,16 @@ body {
 }
 
 #banner {
-  @include custom-card;
+  @include linear-card;
 }
 
+// ── Sidebar ──
+
 .sidebar-wrapper .sidebar-container {
-  border-right: 1px solid var(--linear-border-color);
+  border-right: 1px solid var(--linear-border-default);
 
   &:hover {
-    border-color: var(--linear-accent-bright);
+    border-color: var(--linear-border-standard);
   }
 }
 
@@ -208,7 +236,6 @@ body {
   padding: 0 var(--d-sidebar-row-horizontal-padding) !important;
 }
 
-/* Ensure custom sidebar buttons (like Wekan) display properly */
 .sidebar-section-link-wrapper a.sidebar-section-link,
 .wekan-sidebar-btn,
 [class*="-sidebar-btn"] {
@@ -229,15 +256,15 @@ body {
 }
 
 .admin-content {
-  @include custom-card;
+  @include linear-card;
 }
 
 .body-page {
-  @include custom-card;
+  @include linear-card;
 }
 
 .powered-by-discourse {
-  border: 1px solid var(--linear-border-color);
+  border: 1px solid var(--linear-border-default);
   grid-area: content;
   align-self: end;
   border-radius: 6px;
@@ -247,7 +274,8 @@ html.composer-open #main-outlet {
   padding-bottom: var(--composer-height);
 }
 
-/* Linear-style scrollbar */
+// ── Scrollbar ──
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -265,14 +293,16 @@ html.composer-open #main-outlet {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Typography */
+// ── Typography ──
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 510;
   letter-spacing: -0.02em;
   font-feature-settings: "cv01", "ss03";
 }
 
-/* Focus styles */
+// ── Focus ──
+
 button:focus-visible, a:focus-visible {
   outline: 2px solid var(--linear-accent-bright);
   outline-offset: 2px;
