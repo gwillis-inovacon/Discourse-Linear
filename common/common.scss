@@ -1,5 +1,16 @@
 @import url('https://rsms.me/inter/inter.css');
 
+// Force dark mode regardless of OS preference
+html {
+  color-scheme: dark !important;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --scheme-type: dark !important;
+  }
+}
+
 :root {
   --d-button-border-radius: 6px;
   --d-nav-pill-border-radius: 6px;
