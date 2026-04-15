@@ -1,38 +1,49 @@
-$redditish-light-bg: #dae0e6;
-$redditish-background-color: dark-light-choose(
-  $redditish-light-bg,
-  $header_background
+// Linear-inspired color definitions
+$linear-bg: #08090a;
+$linear-panel: #0f1011;
+$linear-surface: #191a1b;
+$linear-surface-secondary: #28282c;
+
+$linear-background-color: dark-light-choose(
+  #f7f8f8,
+  $linear-bg
 );
-$redditish-border-color-light: $primary-low-mid;
-$redditish-border-color-dark: $primary-very-low;
-$redditish-border-highlight-color-light: $primary-600;
-$redditish-border-highlight-color-dark: $primary-300;
-$redditish-border-color: $primary-low !default;
-$redditish-border-highlight-color: $primary-200 !default;
+
+$linear-border-color-light: #d0d6e0;
+$linear-border-color-dark: rgba(255, 255, 255, 0.08);
+$linear-border-highlight-color-light: #5e6ad2;
+$linear-border-highlight-color-dark: #7170ff;
+$linear-border-color: rgba(255, 255, 255, 0.08) !default;
+$linear-border-highlight-color: #7170ff !default;
 
 @if is-light-color-scheme() {
-  $redditish-border-color: $redditish-border-color-light;
+  $linear-border-color: $linear-border-color-light;
 } @else {
-  $redditish-border-color: $redditish-border-color-dark;
+  $linear-border-color: $linear-border-color-dark;
 }
 
 @if is-light-color-scheme() {
-  $redditish-border-highlight-color: $redditish-border-highlight-color-light;
+  $linear-border-highlight-color: $linear-border-highlight-color-light;
 } @else {
-  $redditish-border-highlight-color: $redditish-border-highlight-color-dark;
+  $linear-border-highlight-color: $linear-border-highlight-color-dark;
 }
 
 :root {
-  --redditish-bg-color: #{$redditish-background-color};
-  --redditish-border-color: #{$redditish-border-color};
-  --redditish-border-highlight-color: #{$redditish-border-highlight-color};
+  --redditish-bg-color: #{$linear-background-color};
+  --redditish-border-color: #{$linear-border-color};
+  --redditish-border-highlight-color: #{$linear-border-highlight-color};
 
-  /* Brutalist design variables */
-  --brutal-border-width: 4px;
-  --brutal-border-color: #{dark-light-choose(#000000, #ffffff)};
-  --brutal-shadow-color: #{dark-light-choose(#000000, #ffffff)};
-  --brutal-accent-cyan: #22d3ee;
-  --brutal-accent-purple: #a855f7;
-  --brutal-accent-orange: #fb923c;
-  --brutal-accent-yellow: #facc15;
+  /* Linear design variables */
+  --linear-border-width: 1px;
+  --linear-border-color: #{$linear-border-color};
+  --linear-accent: #5e6ad2;
+  --linear-accent-bright: #7170ff;
+  --linear-accent-hover: #828fff;
+  --linear-text-primary: #f7f8f8;
+  --linear-text-secondary: #d0d6e0;
+  --linear-text-tertiary: #8a8f98;
+  --linear-text-quaternary: #62666d;
+  --linear-surface: #{$linear-surface};
+  --linear-panel: #{$linear-panel};
+  --linear-bg: #{$linear-bg};
 }

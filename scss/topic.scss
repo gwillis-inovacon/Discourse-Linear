@@ -1,7 +1,7 @@
 #topic-title {
   background: var(--primary);
   margin: 0;
-  border-radius: 4px 4px 0 0;
+  border-radius: 8px 8px 0 0;
   box-sizing: border-box;
   padding: 1em 2em;
 
@@ -71,7 +71,7 @@
 
 .timeline-container.timeline-docked-bottom .timeline-footer-controls {
   opacity: 1;
-  pointer-events: all; // overrides core
+  pointer-events: all;
 }
 
 .timeline-container .topic-timeline .timeline-scrollarea {
@@ -79,7 +79,7 @@
 }
 
 .timeline-container .topic-timeline .timeline-handle {
-  background-color: var(--tertiary);
+  background-color: var(--linear-accent);
 }
 
 .timeline-footer-controls,
@@ -88,7 +88,7 @@
 .topic-admin-menu-button {
   > button,
   .topic-notifications-button summary {
-    height: 2.6em; // consistency hack
+    height: 2.6em;
     font-size: var(--font-down-1);
 
     @include custom-card {
@@ -214,7 +214,7 @@
 
 .posts-wrapper {
   @include custom-card {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
     border-top: none !important;
     padding: 1em 2em 2em;
   }
@@ -228,7 +228,7 @@
 }
 
 .map:first-of-type .buttons .btn {
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 h3.suggested-topics-message {

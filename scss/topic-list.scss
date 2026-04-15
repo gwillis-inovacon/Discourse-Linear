@@ -71,7 +71,7 @@ div.education {
 }
 
 .period-chooser-header {
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 .select-kit.dropdown-select-box.period-chooser .period-chooser-row {
@@ -123,7 +123,7 @@ div.education {
 
     &.selected {
       .custom-topic-layout {
-        box-shadow: inset 3px 0 0 var(--danger);
+        box-shadow: inset 3px 0 0 var(--linear-accent);
       }
     }
   }
@@ -135,7 +135,7 @@ div.education {
   .badge-notification,
   .category-topic-link td.num .badge-notification {
     font-size: var(--font-down-3);
-    top: -2px; // ocular alignment
+    top: -2px;
     padding: 0.2em 0.4em 0.2em;
   }
 
@@ -223,6 +223,7 @@ div.education {
       height: auto;
       max-height: 500px;
       object-fit: contain;
+      border-radius: 8px;
     }
   }
 
@@ -278,15 +279,15 @@ div.education {
 #dismiss-topics-bottom {
   display: block;
   background: var(--secondary);
-  border: var(--brutal-border-width) solid var(--brutal-border-color);
-  border-radius: 0;
-  @include shadow-brutal-sm;
+  border: 1px solid var(--linear-border-color);
+  border-radius: 6px;
+  @include shadow-linear-sm;
 
   .discourse-no-touch & {
     &:hover {
-      border: var(--brutal-border-width) solid var(--brutal-accent-cyan);
+      border: 1px solid var(--linear-accent-bright);
       color: var(--primary);
-      @include shadow-brutal;
+      @include shadow-linear;
 
       .d-icon {
         color: currentcolor;

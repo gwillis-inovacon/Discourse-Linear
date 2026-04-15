@@ -1,40 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://rsms.me/inter/inter.css');
 
 :root {
-  --d-button-border-radius: 100px;
-  --d-nav-pill-border-radius: 100px;
-  --d-input-border-radius: 4px;
+  --d-button-border-radius: 6px;
+  --d-nav-pill-border-radius: 6px;
+  --d-input-border-radius: 6px;
   --topic-body-width: 900px;
 }
 
-/* Brutalist shadow mixins */
-@mixin shadow-brutal {
-  box-shadow: 8px 8px 0px 0px var(--brutal-shadow-color);
+/* Linear shadow mixins */
+@mixin shadow-linear {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
 }
 
-@mixin shadow-brutal-hover {
-  box-shadow: 12px 12px 0px 0px var(--brutal-shadow-color);
+@mixin shadow-linear-hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-@mixin shadow-brutal-sm {
-  box-shadow: 4px 4px 0px 0px var(--brutal-shadow-color);
+@mixin shadow-linear-sm {
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1.2px 0px 0px;
 }
 
 @mixin custom-card {
   box-sizing: border-box;
   padding: 0.75em;
-  border-radius: 0;
-  border: var(--brutal-border-width) solid var(--brutal-border-color);
-  background: var(--secondary);
-  @include shadow-brutal;
+  border-radius: 8px;
+  border: 1px solid var(--linear-border-color);
+  background: rgba(255, 255, 255, 0.02);
+  @include shadow-linear;
   transition: all 0.2s ease;
 
   @content;
 
   .discourse-no-touch & {
     &:hover {
-      border: var(--brutal-border-width) solid var(--brutal-accent-cyan);
-      @include shadow-brutal-hover;
+      border: 1px solid var(--linear-accent-bright);
+      @include shadow-linear-hover;
       transform: translateY(-2px);
     }
   }
@@ -66,8 +66,9 @@
 
 body {
   background: var(--redditish-bg-color);
-  background-image: none !important; /* overrides category bg because we use it for banners instead */
-  font-family: 'JetBrains Mono', monospace;
+  background-image: none !important;
+  font-family: 'Inter', 'Inter Variable', -apple-system, system-ui, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-feature-settings: "cv01", "ss03";
   line-height: 1.6;
 
   &:not(.has-sidebar-page) {
@@ -154,15 +155,16 @@ body {
       .sidebar-section-link
     ) {
     padding: 0.5em 1em;
-    border: 2px solid var(--brutal-border-color);
-    border-radius: 0;
-    @include shadow-brutal-sm;
+    border: 1px solid var(--linear-border-color);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    @include shadow-linear-sm;
     transition: all 0.2s ease;
-    font-weight: 700;
+    font-weight: 510;
 
     &:hover {
-      @include shadow-brutal;
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--linear-accent-bright);
     }
   }
 }
@@ -173,7 +175,7 @@ body {
 
 .dropdown-menu {
   .btn {
-    border-radius: 0;
+    border-radius: 6px;
   }
 }
 
@@ -181,7 +183,7 @@ body {
   max-width: 640px;
   margin: 0 auto;
   grid-area: content;
-  padding-bottom: 2em; // makes some room for "powered by discourse"
+  padding-bottom: 2em;
 }
 
 #banner {
@@ -189,10 +191,10 @@ body {
 }
 
 .sidebar-wrapper .sidebar-container {
-  border-right: var(--brutal-border-width) solid var(--brutal-border-color);
+  border-right: 1px solid var(--linear-border-color);
 
   &:hover {
-    border-color: var(--brutal-accent-cyan);
+    border-color: var(--linear-accent-bright);
   }
 }
 
@@ -202,8 +204,8 @@ body {
 }
 
 .sidebar-section-link-wrapper button {
-  border-radius: 0;
-  padding: 0 var(--d-sidebar-row-horizontal-padding) !important; // overrides button specificity
+  border-radius: 6px;
+  padding: 0 var(--d-sidebar-row-horizontal-padding) !important;
 }
 
 /* Ensure custom sidebar buttons (like Wekan) display properly */
@@ -235,43 +237,43 @@ body {
 }
 
 .powered-by-discourse {
-  border: 2px solid var(--brutal-border-color);
+  border: 1px solid var(--linear-border-color);
   grid-area: content;
   align-self: end;
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 html.composer-open #main-outlet {
   padding-bottom: var(--composer-height);
 }
 
-/* Brutalist custom scrollbar */
+/* Linear-style scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--secondary);
-  border: 2px solid var(--brutal-accent-cyan);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--brutal-accent-cyan);
-  border: 2px solid var(--brutal-border-color);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0891b2;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Typography enhancements */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 900;
+  font-weight: 510;
   letter-spacing: -0.02em;
+  font-feature-settings: "cv01", "ss03";
 }
 
-/* Focus styles for accessibility */
+/* Focus styles */
 button:focus-visible, a:focus-visible {
-  outline: 4px solid var(--brutal-accent-cyan);
+  outline: 2px solid var(--linear-accent-bright);
   outline-offset: 2px;
 }

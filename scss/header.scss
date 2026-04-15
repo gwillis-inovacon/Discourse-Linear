@@ -1,24 +1,24 @@
 .d-header {
   box-shadow: none;
-  border-bottom: var(--brutal-border-width) solid var(--brutal-border-color);
+  border-bottom: 1px solid var(--linear-border-color);
 
   &:hover {
-    border-bottom: var(--brutal-border-width) solid var(--brutal-accent-cyan);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   &:has(.menu-panel:hover) {
-    border-bottom: var(--brutal-border-width) solid var(--brutal-accent-cyan);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 }
 
 .menu-panel {
-  border-radius: 0;
-  border: 2px solid var(--brutal-border-color);
-  @include shadow-brutal-sm;
+  border-radius: 8px;
+  border: 1px solid var(--linear-border-color);
+  @include shadow-linear;
 
   &:hover {
-    border: 2px solid var(--brutal-accent-cyan);
-    @include shadow-brutal;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    @include shadow-linear-hover;
   }
 }
 
@@ -37,7 +37,7 @@
 }
 
 .d-header-icons .icon {
-  padding: 0.25em !important; // too specific in core
+  padding: 0.25em !important;
   border-radius: var(--d-button-border-radius);
   margin-left: 0.5em;
 
