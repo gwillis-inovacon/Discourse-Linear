@@ -237,6 +237,7 @@ body {
 }
 
 .sidebar-section-link-wrapper a.sidebar-section-link,
+.sidebar-section-link-wrapper button.sidebar-section-link,
 .wekan-sidebar-btn,
 [class*="-sidebar-btn"] {
   display: flex !important;
@@ -247,6 +248,29 @@ body {
   box-shadow: none !important;
   transform: none !important;
   padding: 0.5em var(--d-sidebar-row-horizontal-padding) !important;
+  color: var(--linear-text-primary) !important;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .sidebar-section-link-prefix,
+    .sidebar-section-link-content-text,
+    .sidebar-section-link-suffix,
+    .d-icon {
+      color: #ffffff !important;
+    }
+  }
+}
+
+.sidebar-section-link-wrapper button {
+  color: var(--linear-text-primary) !important;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+  }
 }
 
 .add-to-sidebar {
