@@ -24,7 +24,7 @@ body.category,
 }
 
 #suggested-topics-title {
-  font-weight: normal;
+  font-weight: 510;
 }
 
 .category-breadcrumb {
@@ -33,8 +33,7 @@ body.category,
 
 .topic-list-bottom .footer-message {
   text-align: center;
-
-  @include custom-card {
+  @include linear-card {
     padding: 2.5em 3em 2em;
   }
 }
@@ -46,8 +45,31 @@ body.category,
 #navigation-bar {
   width: 100%;
   margin: 0 0 1em 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--linear-border-default);
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
 
-  @include custom-card;
+  li {
+    a {
+      border-radius: 6px;
+      font-weight: 510;
+      font-size: var(--font-down-1);
+      color: var(--linear-text-tertiary);
+      padding: 5px 12px;
+      transition: all 0.15s ease;
+
+      &:hover {
+        color: var(--linear-text-primary);
+      }
+    }
+
+    &.active a {
+      background: rgba(94, 106, 210, 0.15);
+      color: var(--linear-text-primary);
+    }
+  }
 }
 
 .list-controls {
@@ -75,7 +97,7 @@ div.education {
 }
 
 .select-kit.dropdown-select-box.period-chooser .period-chooser-row {
-  font-weight: normal;
+  font-weight: 510;
 }
 
 .select-kit.dropdown-select-box.period-chooser .period-chooser-header {
@@ -87,7 +109,7 @@ div.education {
   }
 
   .date-section {
-    font-weight: normal;
+    font-weight: 510;
   }
 
   h2.selected-name {
@@ -117,7 +139,7 @@ div.education {
     &.visited {
       .link-top-line a.title,
       .topic-excerpt {
-        color: var(--primary-medium);
+        color: var(--linear-text-quaternary);
       }
     }
 
@@ -149,7 +171,7 @@ div.education {
       span {
         position: absolute;
         margin-top: -0.33em;
-        background: var(--redditish-bg-color);
+        background: var(--linear-bg);
         padding: 0.25em;
       }
     }
@@ -158,7 +180,6 @@ div.education {
   tbody {
     border: none;
     display: flex;
-    gap: 1em;
     flex-direction: column;
     min-width: 0;
   }
@@ -171,20 +192,37 @@ div.education {
 .custom-topic-layout {
   cursor: pointer;
   width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0;
+  border: none;
+  border-bottom: 1px solid var(--linear-border-default);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.15s ease;
 
-  @include custom-card;
+  .discourse-no-touch & {
+    &:hover {
+      background: rgba(255, 255, 255, 0.02);
+      transform: none;
+      box-shadow: none;
+    }
+  }
 
   h2 {
     margin: 0 !important;
-    font-weight: normal;
-    font-size: var(--font-up-2);
+    font-weight: 510;
+    font-size: var(--font-up-1);
+    color: var(--linear-text-primary);
   }
 
   &_meta {
-    color: var(--primary-medium);
+    color: var(--linear-text-tertiary);
     margin-bottom: 0.5em;
     padding-left: 0.05em;
     min-width: 0;
+    font-size: var(--font-down-1);
+    font-weight: 510;
 
     a:not(.badge-wrapper) {
       color: currentcolor;
@@ -192,7 +230,7 @@ div.education {
       &:hover,
       &:focus {
         text-decoration: underline;
-        color: var(--tertiary);
+        color: var(--linear-accent-bright);
       }
     }
 
@@ -207,7 +245,9 @@ div.education {
 
   &_excerpt {
     margin: 0.5em 0 1em;
-    font-size: var(--font-up-1);
+    font-size: var(--font-0);
+    color: var(--linear-text-tertiary);
+    line-height: 1.5;
 
     .topic-excerpt-more {
       font-size: var(--font-down-1);
@@ -215,22 +255,25 @@ div.education {
   }
 
   &_image {
-    width: 100%;
-    margin: 0.25em 0 0.75em;
+    width: 200px;
+    height: 140px;
+    overflow: hidden;
+    margin: 0;
+    flex-shrink: 0;
 
     img {
       width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       border-radius: 8px;
     }
   }
 
   &_bottom-bar {
     font-size: var(--font-down-1);
-    color: var(--primary-medium);
+    color: var(--linear-text-quaternary);
     padding: 0.25em 0;
+    font-weight: 510;
 
     span {
       margin-right: 0.5em;
@@ -245,8 +288,7 @@ div.education {
 .custom-post-bar-contents {
   display: flex;
   align-items: center;
-
-  @include custom-card;
+  @include linear-card;
 
   .avatar {
     margin: 0 1em 0 0;
@@ -257,9 +299,12 @@ div.education {
   input {
     width: 100%;
     margin: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--linear-border-standard);
+    border-radius: 6px;
 
     &:hover {
-      border-color: var(--tertiary);
+      border-color: var(--linear-accent-bright);
     }
   }
 
@@ -278,16 +323,14 @@ div.education {
 #dismiss-new-bottom,
 #dismiss-topics-bottom {
   display: block;
-  background: var(--secondary);
-  border: 1px solid var(--linear-border-color);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--linear-border-standard);
   border-radius: 6px;
-  @include shadow-linear-sm;
 
   .discourse-no-touch & {
     &:hover {
-      border: 1px solid var(--linear-accent-bright);
+      border-color: var(--linear-accent-bright);
       color: var(--primary);
-      @include shadow-linear;
 
       .d-icon {
         color: currentcolor;
