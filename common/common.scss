@@ -358,8 +358,31 @@ body {
 
 // ── Global menu item hover/active — Linear accent ──
 
-// User menu tabs and items
-.user-menu.revamped .menu-tabs-container .btn,
+// User menu tabs (icon row at top of avatar dropdown)
+.menu-tabs-container .tabs-list .btn,
+.menu-tabs-container .bottom-tabs .btn {
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon {
+      color: #ffffff !important;
+    }
+  }
+
+  &.active, &.-active, &[aria-selected="true"] {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon {
+      color: #ffffff !important;
+    }
+  }
+}
+
+// User menu panel items
 .user-menu .quick-access-panel li a,
 .user-menu .quick-access-panel li button {
   transition: background 0.15s ease;
