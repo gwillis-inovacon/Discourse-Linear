@@ -417,7 +417,10 @@ h1, h2, h3, h4, h5, h6 {
 
 // Sidebar: "Site activity" heading + stats
 .about__activities,
-.site-activity {
+.about__activities-heading,
+.site-activity,
+section.about h2:has(+ .about__activities),
+.about .column-right h2 {
   display: none !important;
 }
 
