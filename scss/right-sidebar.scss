@@ -15,13 +15,13 @@
   &_recent,
   &_category-about,
   &_tag-about {
-    @include custom-card;
+    @include linear-card;
   }
 
   &_tag-about,
   &_category-about {
     p {
-      color: var(--primary-high);
+      color: var(--linear-text-tertiary);
       margin: 0;
 
       + .custom-right-sidebar_controls {
@@ -77,13 +77,13 @@
   &_recent {
     &-topics-wrapper {
       border: none;
-      border-top: 1px solid var(--primary-low);
+      border-top: 1px solid var(--linear-border-default);
 
       &:hover {
-        border-color: var(--redditish-border-highlight-color);
+        border-color: var(--linear-border-emphasis);
 
         + .custom-right-sidebar_recent-topics-wrapper {
-          border-color: var(--redditish-border-highlight-color);
+          border-color: var(--linear-border-emphasis);
         }
       }
     }
@@ -92,10 +92,14 @@
       font-size: var(--font-down-2);
       margin-top: 0.25em;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--linear-text-quaternary);
+      font-weight: 590;
     }
 
     h2 {
-      margin: 0.25em 0 !important; // overriding another override
+      margin: 0.25em 0 !important;
+      font-weight: 510;
 
       a {
         color: var(--primary);
@@ -105,15 +109,24 @@
     .visited {
       h2 {
         a {
-          color: var(--primary-medium);
+          color: var(--linear-text-quaternary);
         }
       }
     }
 
     .custom-topic-layout {
-      border: none !important; // overriding specific selector from mixin
+      border: none !important;
       border-radius: 0;
       padding: 1em 0;
+      background: transparent;
+      box-shadow: none;
+
+      .discourse-no-touch & {
+        &:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
 
       .link-bottom-line,
       .bullet-separator,
@@ -191,6 +204,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 8px;
           }
         }
       }
