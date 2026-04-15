@@ -1,5 +1,5 @@
 .user-main {
-  @include custom-card;
+  @include linear-card;
 }
 
 .horizontal-overflow-nav {
@@ -17,6 +17,6 @@
   #main-outlet-wrapper #main-outlet {
     margin-top: 2em;
 
-    @include custom-card;
+    @include linear-card;
   }
 }

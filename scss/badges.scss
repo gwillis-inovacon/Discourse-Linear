@@ -1,7 +1,7 @@
 .badge-card .badge-contents {
   height: 100%;
 
-  @include custom-card;
+  @include linear-card;
 }
 
 .badge-card .favorite-btn {

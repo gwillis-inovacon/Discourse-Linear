@@ -4,15 +4,15 @@
 }
 
 .group-box-inner {
-  @include custom-card;
+  @include linear-card;
 }
 
 .container.group {
   .user-primary-navigation,
   .user-secondary-navigation {
-    background: var(--secondary);
+    background: rgba(255, 255, 255, 0.02);
 
-    @include custom-card;
+    @include linear-card;
   }
 
   .user-secondary-navigation {

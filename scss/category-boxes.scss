@@ -3,9 +3,8 @@
   grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
 
   .category-box {
-    @include custom-card;
+    @include linear-card;
 
-    // stylelint-disable-next-line no-duplicate-selectors
     & {
       border-top: 1px solid transparent;
       border-right: 1px solid transparent;
@@ -15,9 +14,9 @@
 
     .discourse-no-touch & {
       &:hover {
-        border-top: 1px solid var(--redditish-border-highlight-color);
-        border-right: 1px solid var(--redditish-border-highlight-color);
-        border-bottom: 1px solid var(--redditish-border-highlight-color);
+        border-top: 1px solid var(--linear-border-emphasis);
+        border-right: 1px solid var(--linear-border-emphasis);
+        border-bottom: 1px solid var(--linear-border-emphasis);
         border-left: 3px solid var(--category-badge-color);
       }
     }

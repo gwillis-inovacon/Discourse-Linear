@@ -3,7 +3,7 @@
 }
 
 .all-tag-lists {
-  @include custom-card;
+  @include linear-card;
 
   .tags-list {
     margin: 0;

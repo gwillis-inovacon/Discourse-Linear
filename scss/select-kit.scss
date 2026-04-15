@@ -2,7 +2,7 @@
   .select-kit-row {
     .texts {
       .name {
-        font-weight: normal;
+        font-weight: 510;
       }
     }
   }
@@ -15,7 +15,7 @@
 
     .select-kit-body {
       &:hover {
-        border: 1px solid var(--redditish-border-highlight-color);
+        border: 1px solid var(--linear-border-emphasis);
       }
     }
   }

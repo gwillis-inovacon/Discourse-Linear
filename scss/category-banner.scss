@@ -24,7 +24,7 @@
   }
 
   &_meta {
-    background: var(--primary-very-low);
+    background: var(--linear-panel);
   }
 
   &_meta-text {
@@ -37,9 +37,10 @@
     color: var(--secondary);
 
     h1 {
-      margin-top: -0.2em; // ocular alignment
+      margin-top: -0.2em;
       text-align: center;
       padding: 0 0.33em;
+      font-weight: 510;
 
       @include ellipsis;
     }
@@ -53,7 +54,7 @@
 .custom-tag-banner {
   h1 a {
     color: var(--primary-low);
-    font-weight: normal;
+    font-weight: 510;
 
     .d-icon {
       font-size: var(--font-down-3);
