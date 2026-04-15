@@ -356,6 +356,108 @@ body {
   }
 }
 
+// ── Global menu item hover/active — Linear accent ──
+
+// User menu tabs and items
+.user-menu.revamped .menu-tabs-container .btn,
+.user-menu .quick-access-panel li a,
+.user-menu .quick-access-panel li button {
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon, span {
+      color: #ffffff !important;
+    }
+  }
+
+  &.active, &.--active, &[aria-current="true"] {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon, span {
+      color: #ffffff !important;
+    }
+  }
+}
+
+// Dropdown menus and popup menus
+.dropdown-menu li a,
+.dropdown-menu li button,
+.menu-panel li a,
+.menu-panel li button,
+.menu-panel .menu-links-row a,
+.select-kit-collection .select-kit-row {
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon, .name, .desc, span {
+      color: #ffffff !important;
+    }
+  }
+
+  &.is-highlighted, &.is-selected {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon, .name, .desc, span {
+      color: #ffffff !important;
+    }
+  }
+}
+
+// Nav pills (topic list filters, user page tabs)
+.nav-pills > li > a,
+.nav-pills > li button {
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+  }
+
+  &.active {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+  }
+}
+
+// Notification menu items
+.quick-access-panel .row,
+.notifications-list .notification {
+  &:hover {
+    background: rgba(94, 106, 210, 0.15) !important;
+  }
+}
+
+// Hamburger menu items
+.hamburger-panel .menu-links li a,
+.hamburger-panel .menu-links li button {
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .d-icon {
+      color: #ffffff !important;
+    }
+  }
+}
+
+// Section headers in sidebar
+.sidebar-section-header-wrapper .sidebar-section-header-button {
+  &:hover {
+    background: rgba(94, 106, 210, 0.15) !important;
+    color: var(--linear-text-primary) !important;
+  }
+}
+
 .add-to-sidebar {
   .d-icon-star {
     color: var(--tertiary);
