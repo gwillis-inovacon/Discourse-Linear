@@ -408,17 +408,22 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "cv01", "ss03";
 }
 
-// ── About page — hide activity stats but keep contact/guidelines ──
+// ── About page — hide all stats ──
 
-.about__activities-stats,
-section.stats .stats-items,
-.about-page .stats-items {
+// Top row stats
+.about__header-stats,
+.about__statistics,
+.stats,
+.about-page .stats,
+section.stats {
   display: none !important;
 }
 
-// Hide member count and creation date
-.about__header-stat-item,
-.about-page .stat-item {
+// Sidebar "Site activity" section
+.about__activities,
+.about__activities-stats,
+.site-statistics,
+.about-page .site-activity {
   display: none !important;
 }
 
