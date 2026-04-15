@@ -362,16 +362,19 @@ body {
 .menu-tabs-container .tabs-list .btn,
 .menu-tabs-container .bottom-tabs .btn,
 a.user-menu-tab,
-button.user-menu-tab {
+button.user-menu-tab,
+.user-menu .btn.btn-flat.btn-icon.no-text.user-menu-tab {
   transition: background 0.15s ease !important;
   border-radius: 6px !important;
+  background: transparent !important;
 
   &:hover {
     background: var(--linear-accent) !important;
     color: #ffffff !important;
 
-    .d-icon, svg {
+    svg, .d-icon {
       color: #ffffff !important;
+      fill: #ffffff !important;
     }
   }
 
@@ -379,7 +382,27 @@ button.user-menu-tab {
     background: var(--linear-accent) !important;
     color: #ffffff !important;
 
-    .d-icon, svg {
+    svg, .d-icon {
+      color: #ffffff !important;
+      fill: #ffffff !important;
+    }
+  }
+}
+
+// Force override on the specific tab links
+.user-menu.revamped [role="tablist"] [role="tab"] {
+  &:hover {
+    background: var(--linear-accent) !important;
+
+    svg {
+      color: #ffffff !important;
+    }
+  }
+
+  &[aria-selected="true"] {
+    background: var(--linear-accent) !important;
+
+    svg {
       color: #ffffff !important;
     }
   }
