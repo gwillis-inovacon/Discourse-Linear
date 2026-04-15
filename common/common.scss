@@ -360,14 +360,17 @@ body {
 
 // User menu tabs (icon row at top of avatar dropdown)
 .menu-tabs-container .tabs-list .btn,
-.menu-tabs-container .bottom-tabs .btn {
-  transition: background 0.15s ease;
+.menu-tabs-container .bottom-tabs .btn,
+a.user-menu-tab,
+button.user-menu-tab {
+  transition: background 0.15s ease !important;
+  border-radius: 6px !important;
 
   &:hover {
     background: var(--linear-accent) !important;
     color: #ffffff !important;
 
-    .d-icon {
+    .d-icon, svg {
       color: #ffffff !important;
     }
   }
@@ -376,7 +379,7 @@ body {
     background: var(--linear-accent) !important;
     color: #ffffff !important;
 
-    .d-icon {
+    .d-icon, svg {
       color: #ffffff !important;
     }
   }
