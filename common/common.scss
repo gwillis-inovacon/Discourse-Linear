@@ -389,22 +389,25 @@ button.user-menu-tab,
   }
 }
 
-// Force override on the specific tab links
-.user-menu.revamped [role="tablist"] [role="tab"] {
-  &:hover {
-    background: var(--linear-accent) !important;
+// Force override Discourse core buttons.scss:109 (.btn-flat:hover)
+.btn.btn-flat:hover,
+.btn.btn-flat.btn-icon:hover,
+.btn.btn-flat.no-text:hover {
+  background: var(--linear-accent) !important;
+  color: #ffffff !important;
 
-    svg {
-      color: #ffffff !important;
-    }
+  .d-icon, svg {
+    color: #ffffff !important;
   }
+}
 
-  &[aria-selected="true"] {
-    background: var(--linear-accent) !important;
+.btn.btn-flat[aria-selected="true"],
+.btn.btn-flat.btn-icon[aria-selected="true"] {
+  background: var(--linear-accent) !important;
+  color: #ffffff !important;
 
-    svg {
-      color: #ffffff !important;
-    }
+  .d-icon, svg {
+    color: #ffffff !important;
   }
 }
 
