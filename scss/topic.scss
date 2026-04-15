@@ -4,26 +4,36 @@
   border-radius: 8px 8px 0 0;
   box-sizing: border-box;
   padding: 1em 2em;
+  color: var(--linear-text-primary);
 
   @include custom-topic-width;
 
   h1 {
     font-size: var(--font-up-4);
     font-weight: 510;
-    color: var(--secondary);
+    color: var(--linear-text-primary);
 
     a {
-      color: var(--secondary);
+      color: var(--linear-text-primary);
     }
 
     margin-bottom: 0.25em;
   }
 
-  .badge-category__name,
+  .badge-category__name {
+    color: var(--linear-text-secondary);
+  }
+
   .discourse-tag.simple,
   .discourse-tag.simple:visited,
   .discourse-tag.simple:hover {
-    color: var(--secondary);
+    color: var(--linear-text-tertiary);
+  }
+
+  // Tag separators (commas, bullets)
+  .discourse-tags,
+  .list-tags {
+    color: var(--linear-text-quaternary);
   }
 
   a.edit-topic {
