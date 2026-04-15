@@ -1,5 +1,5 @@
 #topic-title {
-  background: var(--primary);
+  background: var(--linear-surface);
   margin: 0;
   border-radius: 8px 8px 0 0;
   box-sizing: border-box;
@@ -9,11 +9,13 @@
 
   h1 {
     font-size: var(--font-up-4);
+    font-weight: 510;
+    color: var(--secondary);
 
     a {
       color: var(--secondary);
     }
-    font-weight: normal;
+
     margin-bottom: 0.25em;
   }
 
@@ -42,7 +44,7 @@
 }
 
 .signup-cta {
-  @include custom-card;
+  @include linear-card;
   @include custom-topic-width;
 
   .buttons {
@@ -58,7 +60,7 @@
 }
 
 .names span.first {
-  font-weight: normal;
+  font-weight: 510;
 }
 
 .topic-list-header {
@@ -75,7 +77,7 @@
 }
 
 .timeline-container .topic-timeline .timeline-scrollarea {
-  border-color: var(--primary-medium);
+  border-color: var(--linear-text-quaternary);
 }
 
 .timeline-container .topic-timeline .timeline-handle {
@@ -91,7 +93,7 @@
     height: 2.6em;
     font-size: var(--font-down-1);
 
-    @include custom-card {
+    @include linear-card {
       padding-top: 0.6em;
       padding-bottom: 0.65em;
     }
@@ -118,12 +120,12 @@
   } @else {
     .topic-footer-main-buttons {
       .btn-default {
-        background-color: var(--secondary);
-        border: 1px solid var(--primary-low-mid);
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--linear-border-standard);
 
         .discourse-no-touch & {
           &:hover {
-            background-color: var(--primary-medium);
+            background-color: rgba(255, 255, 255, 0.08);
           }
         }
       }
@@ -131,12 +133,12 @@
   }
 
   .select-kit.single-select.dropdown-select-box .select-kit-header {
-    background: var(--secondary);
-    border-color: var(--primary-low-mid);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--linear-border-standard);
 
     &:hover,
     &:focus {
-      background: var(--primary-low);
+      background: rgba(255, 255, 255, 0.06);
       color: var(--primary);
 
       .d-icon {
@@ -145,7 +147,7 @@
 
       .d-icon.d-icon-d-tracking,
       .d-icon.d-icon-d-watching {
-        color: var(--tertiary);
+        color: var(--linear-accent);
       }
     }
   }
@@ -161,11 +163,11 @@
   .timeline-ago,
   .start-date,
   .now-date {
-    color: var(--primary-700);
+    color: var(--linear-text-quaternary);
   }
 
   timeline-replies {
-    font-weight: normal;
+    font-weight: 510;
   }
 }
 
@@ -175,7 +177,7 @@
 
 .topic-list-bottom {
   h3 {
-    font-weight: normal;
+    font-weight: 510;
     line-height: 1.2;
   }
 
@@ -194,7 +196,7 @@
   }
 
   #topic-progress-wrapper #topic-progress {
-    border: 1px solid var(--primary-400);
+    border: 1px solid var(--linear-border-standard);
 
     .nums {
       top: 0.1em;
@@ -213,7 +215,7 @@
 }
 
 .posts-wrapper {
-  @include custom-card {
+  @include linear-card {
     border-radius: 0 0 8px 8px;
     border-top: none !important;
     padding: 1em 2em 2em;
@@ -224,7 +226,7 @@
   margin-top: 1em;
   max-width: unset;
 
-  @include custom-card;
+  @include linear-card;
 }
 
 .map:first-of-type .buttons .btn {
@@ -232,7 +234,7 @@
 }
 
 h3.suggested-topics-message {
-  font-weight: normal;
+  font-weight: 510;
 }
 
 .more-topics__container .nav {
