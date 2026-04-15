@@ -1,7 +1,64 @@
 body.has-full-page-chat {
-  background: var(--secondary);
+  background: var(--linear-bg) !important;
 
   .custom-right-sidebar {
     display: none;
+  }
+}
+
+// Force dark backgrounds on all chat containers
+.chat-channel,
+.chat-drawer,
+.chat-drawer-content,
+.chat-messages-container,
+.chat-message-container,
+.chat-channel-preview,
+.chat-browse-view,
+.channels-list,
+.chat-channel-members,
+.chat-side-panel {
+  background-color: var(--linear-bg) !important;
+}
+
+// Chat message styling
+.chat-message {
+  background-color: transparent !important;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+
+  &.is-active,
+  &.is-focused,
+  &:focus,
+  &:focus-within {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+}
+
+// Chat input/composer area
+.chat-composer-container,
+.chat-composer,
+.chat-message-creator {
+  background-color: var(--linear-panel) !important;
+  border-color: var(--linear-border-standard) !important;
+}
+
+// Chat sidebar/drawer panels
+.chat-drawer-header,
+.chat-channel-title,
+.chat-channel-header {
+  background-color: var(--linear-panel) !important;
+  border-color: var(--linear-border-default) !important;
+}
+
+// Prevent any element in chat from going white on focus
+.chat-live-pane,
+.chat-thread {
+  background-color: var(--linear-bg) !important;
+
+  *:focus,
+  *:focus-within {
+    background-color: inherit;
   }
 }
