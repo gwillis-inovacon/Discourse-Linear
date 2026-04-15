@@ -12,7 +12,26 @@
       ]
     ]
   },
-  "color_schemes": {},
+  "color_schemes": {
+    "Linear Dark": {
+      "is_dark": true,
+      "primary": "f7f8f8",
+      "secondary": "08090a",
+      "tertiary": "5e6ad2",
+      "quaternary": "7170ff",
+      "header_background": "0f1011",
+      "header_primary": "f7f8f8",
+      "highlight": "5e6ad2",
+      "danger": "e45735",
+      "success": "27a644",
+      "love": "7170ff",
+      "primary_low": "191a1b",
+      "primary_medium": "62666d",
+      "secondary_low": "28282c",
+      "secondary_medium": "191a1b",
+      "tertiary_low": "1a1b2e"
+    }
+  },
   "components": [
     "https://github.com/discourse/discourse-full-width-component.git",
     "https://github.com/discourse/discourse-header-search.git"
