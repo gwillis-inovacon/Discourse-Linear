@@ -201,12 +201,37 @@ div.education {
   box-shadow: none;
   transition: background 0.15s ease;
 
+  // Grid: text content left, thumbnail right
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: auto auto auto auto;
+  gap: 0 16px;
+
   .discourse-no-touch & {
     &:hover {
       background: rgba(255, 255, 255, 0.02);
       transform: none;
       box-shadow: none;
     }
+  }
+
+  // Place all text in column 1
+  &_meta { grid-column: 1; }
+  h2 { grid-column: 1; }
+  .link-bottom-line { grid-column: 1; }
+  &_excerpt { grid-column: 1; }
+  &_bottom-bar { grid-column: 1; }
+
+  // Place image in column 2, spanning all rows
+  &_image {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+
+  // When no image, use full width
+  &:not(:has(.custom-topic-layout_image)) {
+    grid-template-columns: 1fr;
   }
 
   h2 {
