@@ -1,7 +1,8 @@
 #reply-control {
   border-radius: 12px 12px 0 0;
-  border: 1px solid var(--linear-border-color);
-  @include shadow-linear;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--linear-panel);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
 
   .composer-fields:empty {
     display: none;
@@ -11,7 +12,7 @@
   .select-kit.combo-box .select-kit-header,
   .select-kit.multi-select .multi-select-header,
   #reply-title {
-    border-color: var(--linear-border-color);
+    border-color: var(--linear-border-standard);
     border-radius: 6px;
     border-width: 1px;
   }
@@ -21,8 +22,7 @@
   }
 
   &:hover {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    @include shadow-linear-hover;
+    border-color: rgba(255, 255, 255, 0.15);
   }
 
   .grippie {
@@ -34,7 +34,7 @@
       margin-left: calc(50% - 2.25em);
       padding: 0.75em 1em;
       margin-right: calc(50% - 1.85em);
-      border-top-color: var(--linear-border-color);
+      border-top-color: rgba(255, 255, 255, 0.1);
       border-top-width: 1px;
     }
 
@@ -73,14 +73,14 @@
   .reply-details {
     .select-kit.dropdown-select-box.composer-actions {
       .select-kit-header {
-        background: var(--primary-low);
+        background: rgba(255, 255, 255, 0.05);
         border-color: transparent;
         transition: none;
         padding: 0.05em 0;
         margin-right: 0.5em;
 
         &:hover {
-          background: var(--primary-medium);
+          background: rgba(255, 255, 255, 0.1);
 
           .d-icon {
             color: var(--secondary);
@@ -99,6 +99,8 @@
 
   .btn {
     padding: 0.4em 0 0.33em;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
   }
 }
 
