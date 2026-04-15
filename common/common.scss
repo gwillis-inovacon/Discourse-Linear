@@ -389,6 +389,14 @@ button.user-menu-tab,
   }
 }
 
+// Override Discourse sidebar/menu active variables globally
+:root {
+  --d-sidebar-active-color: #ffffff;
+  --d-sidebar-active-background: #5e6ad2;
+  --d-sidebar-hover-background: #5e6ad2;
+  --d-sidebar-hover-color: #ffffff;
+}
+
 // Override Discourse button CSS custom properties for flat buttons
 .btn.btn-flat {
   --d-button-flat-bg-color: transparent;
@@ -411,6 +419,19 @@ button.user-menu-tab,
     .d-icon, svg {
       color: #ffffff !important;
     }
+  }
+}
+
+// User menu tab icons — override active background from core
+.user-menu.revamped .tabs-list .btn.active,
+.user-menu.revamped .tabs-list .btn:hover,
+.user-menu.revamped .bottom-tabs .btn.active,
+.user-menu.revamped .bottom-tabs .btn:hover {
+  background-color: #5e6ad2 !important;
+
+  .d-icon {
+    color: #ffffff !important;
+    background-color: transparent !important;
   }
 }
 
