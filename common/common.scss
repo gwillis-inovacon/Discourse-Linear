@@ -410,20 +410,25 @@ h1, h2, h3, h4, h5, h6 {
 
 // ── About page — hide all stats ──
 
-// Top row stats
+// Top row: "98 Members · 4 Admins · 1 Moderator · Created..."
+.about__header-meta,
 .about__header-stats,
 .about__statistics,
 .stats,
 .about-page .stats,
-section.stats {
+section.stats,
+.about .general-info,
+.about-page .general-info {
   display: none !important;
 }
 
-// Sidebar "Site activity" section
+// Sidebar: "Site activity" heading + all stat items
 .about__activities,
 .about__activities-stats,
 .site-statistics,
-.about-page .site-activity {
+.about-page .site-activity,
+.about .site-activity,
+section.site-activity {
   display: none !important;
 }
 
