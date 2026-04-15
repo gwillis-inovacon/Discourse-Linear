@@ -17,9 +17,11 @@
   display: none;
 }
 
-// ── Topic cards — hide thumbnail on mobile ──
+// ── Topic cards — stack layout on mobile ──
 
 .custom-topic-layout {
+  grid-template-columns: 1fr !important;
+
   h2 {
     line-height: 1.2;
 
@@ -33,7 +35,18 @@
   }
 
   &_image {
-    display: none;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    height: 180px;
+    margin-top: 0.5em;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
   }
 }
 
