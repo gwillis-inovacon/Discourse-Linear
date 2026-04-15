@@ -435,6 +435,30 @@ button.user-menu-tab,
   }
 }
 
+// Composer toolbar icon buttons
+.d-editor-button-bar .btn.btn-icon,
+.d-editor-button-bar .toolbar__button {
+  --d-button-flat-bg-color: transparent;
+
+  &:hover {
+    background-color: var(--linear-accent) !important;
+    --d-button-flat-bg-color: #5e6ad2;
+
+    .d-icon, svg {
+      color: #ffffff !important;
+    }
+  }
+
+  &.active, &[aria-pressed="true"] {
+    background-color: var(--linear-accent) !important;
+    --d-button-flat-bg-color: #5e6ad2;
+
+    .d-icon, svg {
+      color: #ffffff !important;
+    }
+  }
+}
+
 // User menu panel items
 .user-menu .quick-access-panel li a,
 .user-menu .quick-access-panel li button {
