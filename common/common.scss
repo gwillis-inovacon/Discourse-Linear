@@ -1,13 +1,69 @@
 @import url('https://rsms.me/inter/inter.css');
 
-// Force dark mode regardless of OS preference
-html {
+// Force dark mode — override all Discourse color variables at every level
+html, html.light-scheme, html.dark-scheme {
   color-scheme: dark !important;
+  --scheme-type: dark !important;
+  --primary: #f7f8f8 !important;
+  --secondary: #08090a !important;
+  --tertiary: #5e6ad2 !important;
+  --quaternary: #7170ff !important;
+  --header_background: #0f1011 !important;
+  --header_primary: #f7f8f8 !important;
+  --highlight: #5e6ad2 !important;
+  --danger: #e45735 !important;
+  --success: #27a644 !important;
+  --love: #7170ff !important;
+  --primary-rgb: 247, 248, 248 !important;
+  --secondary-rgb: 8, 9, 10 !important;
+  --primary-very-low: #141516 !important;
+  --primary-low: #191a1b !important;
+  --primary-low-mid: #28282c !important;
+  --primary-medium: #62666d !important;
+  --primary-high: #d0d6e0 !important;
+  --primary-very-high: #f7f8f8 !important;
+  --primary-50: #141516 !important;
+  --primary-100: #191a1b !important;
+  --primary-200: #1e1f21 !important;
+  --primary-300: #28282c !important;
+  --primary-400: #3e3e44 !important;
+  --primary-500: #62666d !important;
+  --primary-600: #8a8f98 !important;
+  --primary-700: #d0d6e0 !important;
+  --primary-800: #e8eaed !important;
+  --primary-900: #f7f8f8 !important;
+  --secondary-low: #28282c !important;
+  --secondary-medium: #191a1b !important;
+  --secondary-high: #0f1011 !important;
+  --secondary-very-high: #08090a !important;
+  --tertiary-low: #1a1b2e !important;
+  --tertiary-medium: #3d4180 !important;
+  --tertiary-high: #5e6ad2 !important;
+  --tertiary-hover: #828fff !important;
+  --danger-low: #2a1410 !important;
+  --danger-medium: #8b3520 !important;
+  --success-low: #0f1f14 !important;
+  --success-medium: #1a6030 !important;
+  --love-low: #1a1a2e !important;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --scheme-type: dark !important;
+    --primary: #f7f8f8 !important;
+    --secondary: #08090a !important;
+    --tertiary: #5e6ad2 !important;
+    --quaternary: #7170ff !important;
+    --header_background: #0f1011 !important;
+    --header_primary: #f7f8f8 !important;
+    --primary-very-low: #141516 !important;
+    --primary-low: #191a1b !important;
+    --primary-low-mid: #28282c !important;
+    --primary-medium: #62666d !important;
+    --primary-high: #d0d6e0 !important;
+    --secondary-low: #28282c !important;
+    --secondary-medium: #191a1b !important;
+    --secondary-high: #0f1011 !important;
   }
 }
 
