@@ -262,6 +262,22 @@ body {
       color: #ffffff !important;
     }
   }
+
+  // Active/selected state — persist indigo background
+  &.active,
+  &.--active,
+  &[aria-current="page"],
+  &[aria-current="true"] {
+    background: var(--linear-accent) !important;
+    color: #ffffff !important;
+
+    .sidebar-section-link-prefix,
+    .sidebar-section-link-content-text,
+    .sidebar-section-link-suffix,
+    .d-icon {
+      color: #ffffff !important;
+    }
+  }
 }
 
 .sidebar-section-link-wrapper button {
