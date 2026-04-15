@@ -1,25 +1,16 @@
 .d-header {
   box-shadow: none;
-  border-bottom: 1px solid var(--linear-border-color);
-
-  &:hover {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  &:has(.menu-panel:hover) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  }
+  background: rgba(15, 16, 17, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--linear-border-standard);
 }
 
 .menu-panel {
   border-radius: 8px;
-  border: 1px solid var(--linear-border-color);
-  @include shadow-linear;
-
-  &:hover {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    @include shadow-linear-hover;
-  }
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--linear-surface);
+  box-shadow: var(--linear-shadow-panel);
 }
 
 .user-menu.revamped .menu-tabs-container {
@@ -38,8 +29,9 @@
 
 .d-header-icons .icon {
   padding: 0.25em !important;
-  border-radius: var(--d-button-border-radius);
+  border-radius: 50%;
   margin-left: 0.5em;
+  background: rgba(255, 255, 255, 0.05);
 
   .d-icon {
     font-size: var(--font-up-2);
@@ -52,5 +44,5 @@
 
 .header-sidebar-toggle button .d-icon {
   font-size: var(--font-up-2);
-  color: var(--primary-medium);
+  color: var(--linear-text-tertiary);
 }
