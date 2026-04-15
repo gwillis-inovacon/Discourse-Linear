@@ -408,6 +408,12 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "cv01", "ss03";
 }
 
+// ── About page ──
+
+.stats {
+  display: none;
+}
+
 // ── Focus ──
 
 button:focus-visible, a:focus-visible {
