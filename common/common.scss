@@ -389,25 +389,28 @@ button.user-menu-tab,
   }
 }
 
-// Force override Discourse core buttons.scss:109 (.btn-flat:hover)
-.btn.btn-flat:hover,
-.btn.btn-flat.btn-icon:hover,
-.btn.btn-flat.no-text:hover {
-  background: var(--linear-accent) !important;
-  color: #ffffff !important;
+// Override Discourse button CSS custom properties for flat buttons
+.btn.btn-flat {
+  --d-button-flat-bg-color: transparent;
+  --d-button-flat-hover-bg-color: #5e6ad2;
 
-  .d-icon, svg {
+  &:hover {
+    --d-button-flat-bg-color: #5e6ad2;
     color: #ffffff !important;
+
+    .d-icon, svg {
+      color: #ffffff !important;
+    }
   }
-}
 
-.btn.btn-flat[aria-selected="true"],
-.btn.btn-flat.btn-icon[aria-selected="true"] {
-  background: var(--linear-accent) !important;
-  color: #ffffff !important;
-
-  .d-icon, svg {
+  &[aria-selected="true"],
+  &.active {
+    --d-button-flat-bg-color: #5e6ad2;
     color: #ffffff !important;
+
+    .d-icon, svg {
+      color: #ffffff !important;
+    }
   }
 }
 
