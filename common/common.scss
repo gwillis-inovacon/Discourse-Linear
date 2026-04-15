@@ -408,10 +408,18 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "cv01", "ss03";
 }
 
-// ── About page ──
+// ── About page — hide activity stats but keep contact/guidelines ──
 
-.stats {
-  display: none;
+.about__activities-stats,
+section.stats .stats-items,
+.about-page .stats-items {
+  display: none !important;
+}
+
+// Hide member count and creation date
+.about__header-stat-item,
+.about-page .stat-item {
+  display: none !important;
 }
 
 // ── Focus ──
