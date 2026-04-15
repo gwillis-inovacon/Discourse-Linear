@@ -17,6 +17,8 @@
   display: none;
 }
 
+// ── Topic cards — hide thumbnail on mobile ──
+
 .custom-topic-layout {
   h2 {
     line-height: 1.2;
@@ -29,7 +31,13 @@
   .link-bottom-line {
     margin-top: 0.25em;
   }
+
+  &_image {
+    display: none;
+  }
 }
+
+// ── Navigation ──
 
 body.tags-page,
 body.category,
@@ -46,16 +54,19 @@ body.category,
 
     #create-topic {
       display: flex !important;
-      background: var(--tertiary);
-      color: var(--secondary);
-      box-shadow: var(--shadow-card);
+      background: var(--linear-accent);
+      color: #ffffff;
+      box-shadow: var(--linear-shadow-panel);
+      border-radius: 50%;
 
       .d-icon {
-        color: var(--secondary);
+        color: #ffffff;
       }
     }
   }
 }
+
+// ── Page padding ──
 
 #topic-title,
 .posts-wrapper,
@@ -119,6 +130,8 @@ body.category,
   font-size: var(--font-down-1);
 }
 
+// ── Topic footer ──
+
 #topic-footer-buttons {
   margin-bottom: calc(env(safe-area-inset-bottom) + 1em);
 
@@ -157,7 +170,7 @@ html:not(.footer-nav-visible) #topic-progress-wrapper {
   margin-right: 0.5em;
   margin-left: 0;
   border-radius: 100px;
-  border: 1px solid var(--primary-low-mid);
+  border: 1px solid var(--linear-border-standard);
   overflow: hidden;
 
   .nums {
@@ -185,6 +198,8 @@ html:not(.footer-nav-visible) #topic-progress-wrapper {
 .category-boxes-with-topics {
   margin-top: 0;
 }
+
+// ── Composer ──
 
 #reply-control {
   .reply-to {
