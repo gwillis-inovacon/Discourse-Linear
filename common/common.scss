@@ -148,6 +148,17 @@ body {
     }
   }
 
+  // Hide custom right-sidebar and category/tag banners by default.
+  // Only shown on topic-list pages (see &.tags-page / navigation-* / category-* below).
+  // Why: the after-main-outlet connector renders .custom-right-sidebar on every
+  // page, which previously left a reserved-looking empty band on the right of
+  // pages without the sidebar (user, topic view, admin, search, about, etc.).
+  .custom-tag-banner,
+  .custom-category-banner,
+  .custom-right-sidebar {
+    display: none;
+  }
+
   &.tags-page,
   &[class*="navigation-"]:not([class*="archetype-"]),
   &[class*="category-"]:not([class*="archetype-"]) {
@@ -182,6 +193,23 @@ body {
     }
   }
 
+  // Reveal the custom right-sidebar and banners on topic-list pages only.
+  // navigation-categories (the all-categories listing) is excluded here so
+  // categories.scss can keep hiding the sidebar there while still extending
+  // #main-outlet across the sidebar2 column.
+  &.tags-page,
+  &[class*="navigation-"]:not([class*="archetype-"]):not(.navigation-categories),
+  &[class*="category-"]:not([class*="archetype-"]) {
+    .custom-tag-banner,
+    .custom-category-banner {
+      display: block;
+    }
+
+    .custom-right-sidebar {
+      display: flex;
+    }
+  }
+
   &.has-sidebar-page.tags-page,
   &.has-sidebar-page[class*="navigation-"]:not([class*="archetype-"]),
   &.has-sidebar-page[class*="category-"]:not([class*="archetype-"]) {
@@ -200,15 +228,6 @@ body {
           display: none;
         }
       }
-    }
-  }
-
-  &[class*="user-"],
-  &.archetype-regular {
-    .custom-tag-banner,
-    .custom-category-banner,
-    .custom-right-sidebar {
-      display: none;
     }
   }
 }
@@ -273,10 +292,13 @@ body {
 // ── Layout ──
 
 #main-outlet {
-  max-width: 640px;
   margin: 0 auto;
   grid-area: content;
   padding-bottom: 2em;
+  // No global max-width: on topic-list pages the 6-column grid already caps the
+  // content column at minmax(0, 640px); on all other pages (topic view, user,
+  // admin, search, about, etc.) #main-outlet now fills the available width
+  // instead of being squeezed to 640px with empty space where no sidebar exists.
 }
 
 #banner {
