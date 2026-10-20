@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
-import { htmlSafe } from "@ember/template";
+import { trustHTML } from "@ember/template";
 import CategoryLogo from "discourse/components/category-logo";
 
 export default class CustomCategoryBanner extends Component {
@@ -15,7 +15,7 @@ export default class CustomCategoryBanner extends Component {
   }
 
   get bannerBg() {
-    return htmlSafe(
+    return trustHTML(
       `background: url("${this.category.uploaded_background?.url}");
        background-size: cover; 
        background-position: center center;;`
@@ -23,13 +23,13 @@ export default class CustomCategoryBanner extends Component {
   }
 
   get categoryBgColor() {
-    return htmlSafe(
+    return trustHTML(
       `background-color: var(--category-${this.category.id}-color);`
     );
   }
 
   get categoryTextColor() {
-    return htmlSafe(`color: ${this.category.text_color};`);
+    return trustHTML(`color: ${this.category.text_color};`);
   }
 
   get categorySlug() {

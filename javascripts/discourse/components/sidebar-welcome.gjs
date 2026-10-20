@@ -1,10 +1,10 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
+import { trustHTML } from "@ember/template";
 import { and } from "truth-helpers";
 import DButton from "discourse/components/d-button";
 import basePath from "discourse/helpers/base-path";
-import htmlSafe from "discourse/helpers/html-safe";
 import Composer from "discourse/models/composer";
 import { i18n } from "discourse-i18n";
 import SidebarLatestTopics from "./sidebar-latest-topics";
@@ -37,7 +37,7 @@ export default class SidebarWelcome extends Component {
       <div class="custom-right-sidebar_welcome">
         <h2>{{i18n (themePrefix "top_route_welcome")}}</h2>
         <p>
-          {{htmlSafe
+          {{trustHTML
             (i18n (themePrefix "top_route_description") basePath=(basePath))
           }}
         </p>
